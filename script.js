@@ -4,10 +4,27 @@ document.addEventListener("DOMContentLoaded", () => {
     let valueInput = document.getElementById("value");
     let fromUnitSelect = document.getElementById("fromUnit");
     let toUnitSelect = document.getElementById("toUnit");
+    let fromUnitSelect2 = document.getElementById("fromUnit2");
+    let toUnitSelect2 = document.getElementById("toUnit2");
+    let fromUnitSelect3 = document.getElementById("fromUnit3");
+    let toUnitSelect3 = document.getElementById("toUnit3");
+    let fromUnitSelect4 = document.getElementById("fromUnit4");
+    let toUnitSelect4 = document.getElementById("toUnit4");
     let resultElement = document.getElementById("result");
     let convertButton = document.getElementById("convertButton");
     let loadingElement = document.getElementById("loading");
     let categorySelectElement = document.getElementById("categorySelect");
+    let fromUnitLength = document.getElementById("fromUnitlength");
+    let toUnitLength = document.getElementById("toUnitlength");
+    let fromUnitCapacity = document.getElementById("fromUnitcapacity");
+    let toUnitCapacity = document.getElementById("toUnitcapacity");
+    let fromUnitMass = document.getElementById("fromUnitmass");
+    let toUnitMass = document.getElementById("toUnitmass");
+    let fromUnitTemperature = document.getElementById("fromUnittemperature");
+    let toUnitTemperature = document.getElementById("toUnittemperature");
+    let btnSectionDiv = document.getElementById("btn-section");
+    let initialMessageDiv = document.getElementById("initialMessage");
+    let phrase = document.getElementById("phrase");
     
     function convertLength(value, fromUnit, toUnit) {
         let meters;
@@ -107,40 +124,40 @@ document.addEventListener("DOMContentLoaded", () => {
             case "l":   // Litri
             liters = value;
             break;
-            case "daL":  // Decalitri
+            case "dal":  // Decalitri
             liters = value * 10;
             break;
             case "hl":  // Ettolitri
             liters = value * 100;
             break;
-            case "kL":  // Kilolitri
+            case "kl":  // Kilolitri
             liters = value * 1000;
             break;
-            case "ML":  // Megalitri
+            case "Ml":  // Megalitri
             liters = value * 1000000;
             break;
-            case "GL":  // Gigalitri
+            case "Gl":  // Gigalitri
             liters = value * 1000000000;
             break;
-            case "TL":  // Teralitri
+            case "Tl":  // Teralitri
             liters = value * 1000000000000;
             break;
-            case "dL":  // Decilitri
+            case "dl":  // Decilitri
             liters = value / 10;
             break;
-            case "cL":  // Centilitri
+            case "cl":  // Centilitri
             liters = value / 100;
             break;
-            case "mL":  // Millilitri
+            case "ml":  // Millilitri
             liters = value / 1000;
             break;
-            case "µL":  // Microlitri
+            case "µl":  // Microlitri
             liters = value / 1000000;
             break;
-            case "nL":  // Nanolitri
+            case "nl":  // Nanolitri
             liters = value / 1000000000;
             break;
-            case "pL":  // Picolitri
+            case "pl":  // Picolitri
             liters = value / 1000000000000;
             break;
             case "t":   // Cucchiaino
@@ -176,29 +193,29 @@ document.addEventListener("DOMContentLoaded", () => {
         switch (toUnit) {
             case "l":
             return parseFloat(liters.toFixed(5));
-            case "daL":
+            case "dal":
             return parseFloat((liters / 10).toFixed(5));
             case "hl":
             return parseFloat((liters / 100).toFixed(5));
-            case "kL":
+            case "kl":
             return parseFloat((liters / 1000).toFixed(5));
-            case "ML":
+            case "Ml":
             return parseFloat((liters / 1000000).toFixed(5));
-            case "GL":
+            case "Gl":
             return parseFloat((liters / 1000000000).toFixed(5));
-            case "TL":
+            case "Tl":
             return parseFloat((liters / 1000000000000).toFixed(5));
-            case "dL":
+            case "dl":
             return parseFloat((liters * 10).toFixed(5));
-            case "cL":
+            case "cl":
             return parseFloat((liters * 100).toFixed(5));
-            case "mL":
+            case "ml":
             return parseFloat((liters * 1000).toFixed(5));
-            case "µL":
+            case "µl":
             return parseFloat((liters * 1000000).toFixed(5));
-            case "nL":
+            case "nl":
             return parseFloat((liters * 1000000000).toFixed(5));
-            case "pL":
+            case "pl":
             return parseFloat((liters * 1000000000000).toFixed(5));
             case "t":
             return parseFloat((liters / 0.00492892).toFixed(5));
@@ -230,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case "kg":
             kilograms = value;
             break;
-            case "ton":
+            case "t":
             kilograms = value * 1000;
             break;
             case "Gg":
@@ -272,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case "oz":
             kilograms = value * 35.274;
             break;
-            case "l":
+            case "lb":
             kilograms = value * 2.20462; 
             default:
             break;
@@ -286,15 +303,15 @@ document.addEventListener("DOMContentLoaded", () => {
             return parseFloat((kilograms / 1e12).toFixed(5));
             case "Gg":
             return parseFloat((kilograms / 1e9).toFixed(5));
-            case "ton":
+            case "t":
             return parseFloat((kilograms / 1e6).toFixed(5));
-            case "kg":
+            case "g":
             return parseFloat((kilograms / 1000).toFixed(5));
             case "hg":
             return parseFloat((kilograms / 100).toFixed(5));
             case "dag":
             return parseFloat((kilograms / 10).toFixed(5));
-            case "g":
+            case "kg":
             return parseFloat(kilograms.toFixed(5));
             case "dg":
             return parseFloat((kilograms * 10).toFixed(5));
@@ -380,6 +397,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let value = parseFloat(valueInput.value);    // Valore da convertire
         let fromUnit = fromUnitSelect.value;         // Unità di partenza
         let toUnit = toUnitSelect.value;             // Unità di destinazione
+        let fromUnit2 = fromUnitSelect2.value;         
+        let toUnit2 = toUnitSelect2.value;        
+        let fromUnit3 = fromUnitSelect3.value;         
+        let toUnit3 = toUnitSelect3.value;      
+        let fromUnit4 = fromUnitSelect4.value;         
+        let toUnit4 = toUnitSelect4.value; 
     
         // Validazione dell'input
         if (isNaN(value)) {
@@ -393,64 +416,46 @@ document.addEventListener("DOMContentLoaded", () => {
     
         setTimeout(() => {
             let result;
+            let unitSymbol = "";
     
             // Determina automaticamente la funzione di conversione in base alle unità
-            if (["Tm", "m", "km", "cm", "mm"].includes(fromUnit)) {  // Lunghezza
+            if (["Tm", "Gm", "Mm", "km", "hm", "dam", "m", "dm", "cm", "mm", "µm", "nm", "pm", "in", "ft", "yd", "mi", "nmi"].includes(fromUnit)) {  // Lunghezza
                 result = convertLength(value, fromUnit, toUnit);
-            } else if (["kg", "g", "lb", "oz"].includes(fromUnit)) {  // Massa
-                result = convertMass(value, fromUnit, toUnit);
-            } else if (["l", "ml", "gal"].includes(fromUnit)) {  // Capacità
-                result = convertCapacity(value, fromUnit, toUnit);
-            } else if (["°C", "°F", "K"].includes(fromUnit)) {  // Temperatura
-                result = convertTemperature(value, fromUnit, toUnit);
+                unitSymbol = toUnit;
+
+            } else if (["l", "ml", "gal"].includes(fromUnit2)) {  // Massa
+                result = convertCapacity(value, fromUnit2, toUnit2);
+                unitSymbol = toUnit2;
+
+            } else if (["kg", "g", "lb", "oz"].includes(fromUnit3)) {  // Capacità
+                result = convertMass(value, fromUnit3, toUnit3);
+                unitSymbol = toUnit3;
+
+            } else if (["°C", "°F", "K"].includes(fromUnit4)) {  // Temperatura
+                result = convertTemperature(value, fromUnit4, toUnit4);
+                unitSymbol = toUnit4;
+
             } else {
                 resultElement.innerText = "Unità non supportata.";
                 loadingElement.style.display = 'none';
-                resultElement.style.display = 'block';
+                resultElement.style.display = 'block'; 
                 return;
             }
+
     
             // Nasconde il caricamento e mostra il risultato
             loadingElement.style.display = 'none';
             resultElement.style.display = 'block';
-            resultElement.innerText = `Il risultato è: ${result} ${toUnit}`;
-        }, 2000);  // Simula un ritardo di 2 secondi per elaborazione
+            resultElement.innerText = `Il risultato è: ${result} ${unitSymbol}`;
+
+            console.log("Unità di arrivo selezionata:", toUnit);
+
+        }, 3000);  // Simula un ritardo di 2 secondi per elaborazione
     });
     
+   
     
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    /* function showConversionSection() {
+    function showConversionSection() {
     // Ottengo il valore (opzione) derivante dal menù a tendina
     let selectedValue = categorySelectElement.value;
     
@@ -463,40 +468,53 @@ document.addEventListener("DOMContentLoaded", () => {
     categorySelectElement.style.display = 'none';
     
     // Nascondo le sezioni di conversione
-    fromUnitLength.style.display = 'none'; 
-    toUnitLength.style.display = 'none';
-    fromUnitCapacity.style.display = 'none';
-    toUnitCapacity.style.display = 'none';
-    fromUnitMass.style.display = 'none';
-    toUnitMass.style.display = 'none';
-    fromUnitTemperature.style.display = 'none';
-    toUnitTemperature.style.display = 'none';
+    fromUnitSelect.style.display = 'none'; 
+    toUnitSelect.style.display = 'none';
+    fromUnitSelect2.style.display = 'none';
+    toUnitSelect2.style.display = 'none';
+    fromUnitSelect3.style.display = 'none';
+    toUnitSelect3.style.display = 'none';
+    fromUnitSelect4.style.display = 'none';
+    toUnitSelect4.style.display = 'none';
     
     
     // Mostro la schermata in base alla grandezza fisica scelta
     switch (selectedValue) {
+
     case "length":
+    fromUnitSelect.style.display = 'block';
+    toUnitSelect.style.display = 'block';
     fromUnitLength.style.display = 'block';
-    toUnitLength.style.display = 'block';
+    toUnitLength.style.display = 'block'
     break;
+
     case "capacity":
+    fromUnitSelect2.style.display = 'block';
+    toUnitSelect2.style.display = 'block';
     fromUnitCapacity.style.display = 'block';
     toUnitCapacity.style.display = 'block';
     break;
+
     case "mass":
-    fromUnitMass.style.display = 'block';
+    fromUnitSelect3.style.display = 'block';
+    toUnitSelect3.style.display = 'block';
+    fromUnitMass.style.display ='block';
     toUnitMass.style.display = 'block';
     break;
+
     case "temperature":
+    fromUnitSelect4.style.display = 'block';
+    toUnitSelect4.style.display = 'block';
     fromUnitTemperature.style.display = 'block';
     toUnitTemperature.style.display = 'block';
     break;
+
     default:
     break;
     }
     } 
     
-    physicalQuantitySelect.addEventListener("change", showConversionSection); */
+    categorySelectElement.addEventListener("change", showConversionSection);  
     
 });
 

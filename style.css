@@ -6,8 +6,6 @@ body {
     font-size: smaller;
 }
 
-/* 
-
 #value {
     display: none;
 }
@@ -23,13 +21,41 @@ body {
 #chooseValue {
     display: none;
 }
+    
+
+#fromUnitlength {
+    display: none;
+}
+ 
+#toUnitlength {
+    display: none;
+}
 
 #fromUnit {
     display: none;
 }
- */
 
-#lengthSection {
+#fromUnitcapacity {
+    display: none;
+}
+
+#toUnitcapacity {
+    display: none;
+}
+
+#fromUnitmass {
+    display: none;
+}
+
+#toUnitmass {
+    display: none;
+}
+
+#fromUnittemperature {
+    display: none;
+}
+
+#toUnittemperature {
     display: none;
 }
 
@@ -82,7 +108,7 @@ input, select {
     animation: spin 1s linear infinite;
     margin-top: 10px;
     position: absolute;
-    top: 40%; 
+    top: 45%; 
     left: 50%;
     right: 50%;
 }
