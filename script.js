@@ -40,11 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (fromUnit === "km") { // Kilometri //? Sapere a quanti Metri equivalgono n Kilometri
             meters = value * 1000;
         } else if (fromUnit === "Mm") { // Megametri //? Sapere a quanti Metri equivalgono n Megametri
-            meters = value * 1000000;
+            meters = value * 1e6;
         } else if (fromUnit === "Gm") { // Gigametri //? Sapere a quanti Metri equivalgono n Gigametri
-            meters = value * 1000000000;
+            meters = value * 1e9;
         } else if (fromUnit === "Tm") { // Terametri //? Sapere a quanti Metri equivalgono n Terametri
-            meters = value * 1000000000000;
+            meters = value * 1e12;
         } else if (fromUnit === "dm") { // Decimetri //? Sapere a quanti Metri equivalgono n Decimetri
             meters = value / 10;
         } else if (fromUnit === "cm") { // Centimetri //? Sapere a quanti Metri equivalgono n Centimetri
@@ -52,11 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (fromUnit === "mm") { // Millimetri //? Sapere a quanti Metri equivalgono n Millimetri
             meters = value / 1000;
         } else if (fromUnit === "µm") { // Micrometri //? Sapere a quanti Metri equivalgono n Micrometri
-            meters = value / 1000000;
+            meters = value / 1e6;
         } else if (fromUnit === "nm") { // Nanometri //? Sapere a quanti Metri equivalgono n Nanometri
-            meters = value / 1000000000;
+            meters = value / 1e9;
         } else if (fromUnit === "pm") { // Picometro //? Sapere a quanti Metri equivalgono n Picometri
-            meters = value / 1000000000000;
+            meters = value / 1e12;
         } else if (fromUnit === "in") { // Pollici //? Sapere a quanti Metri equivalgono n Pollici
             meters = value * 0.0255;
         } else if (fromUnit === "ft") { // Piedi //? Sapere a quanti Metri equivalgono n Piedi
@@ -82,11 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (toUnit === "km") { 
             return parseFloat((meters / 1000).toFixed(5)); //? Sapere a quanti Kilometri equivalgono n Metri
         } else if (toUnit === "Mm") { 
-            return parseFloat((meters / 1000000).toFixed(5)); //? Sapere a quanti Megametri equivalgono n Metri
+            return parseFloat((meters / 1e6).toFixed(5)); //? Sapere a quanti Megametri equivalgono n Metri
         } else if (toUnit === "Gm") { 
-            return parseFloat((meters / 1000000000).toFixed(5)); //? Sapere a quanti Gigametri equivalgono n Metri
+            return parseFloat((meters / 1e9).toFixed(5)); //? Sapere a quanti Gigametri equivalgono n Metri
         } else if (toUnit === "Tm") { 
-            return parseFloat((meters / 1000000000000).toFixed(5)); //? Sapere a quanti Terametri equivalgono n Metri
+            return parseFloat((meters / 1e12).toFixed(5)); //? Sapere a quanti Terametri equivalgono n Metri
         } else if (toUnit === "dm") { 
             return parseFloat((meters * 10).toFixed(5)); //? Sapere a quanti Decimetri equivalgono n Metri
         } else if (toUnit === "cm") { 
@@ -94,11 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (toUnit === "mm") { 
             return parseFloat((meters * 1000).toFixed(5)); //? Sapere a quanti Millimetri equivalgono n Metri
         } else if (toUnit === "µm") { 
-            return parseFloat((meters * 1000000).toFixed(5)); //? Sapere a quanti Micrometri equivalgono n Metri
+            return parseFloat((meters * 1e6).toFixed(5)); //? Sapere a quanti Micrometri equivalgono n Metri
         } else if (toUnit === "nm") { 
-            return parseFloat((meters * 1000000000).toFixed(5)); //? Sapere a quanti Nanometri equivalgono n Metri
+            return parseFloat((meters * 1e9).toFixed(5)); //? Sapere a quanti Nanometri equivalgono n Metri
         } else if (toUnit === "pm") { 
-            return parseFloat((meters * 1000000000000).toFixed(5)); //? Sapere a quanti Picometri equivalgono n Metri
+            return parseFloat((meters * 1e12).toFixed(5)); //? Sapere a quanti Picometri equivalgono n Metri
         } else if (toUnit === "in") { 
             return parseFloat((meters * 39.3701).toFixed(5)); //? Sapere a quanti Pollici equivalgono n Metri
         } else if (toUnit === "ft") { 
@@ -134,13 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
             liters = value * 1000;
             break;
             case "Ml":  // Megalitri
-            liters = value * 1000000;
+            liters = value * 1e6;
             break;
             case "Gl":  // Gigalitri
-            liters = value * 1000000000;
+            liters = value * 1e9;
             break;
             case "Tl":  // Teralitri
-            liters = value * 1000000000000;
+            liters = value * 1e12;
             break;
             case "dl":  // Decilitri
             liters = value / 10;
@@ -152,13 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
             liters = value / 1000;
             break;
             case "µl":  // Microlitri
-            liters = value / 1000000;
+            liters = value / 1e6;
             break;
             case "nl":  // Nanolitri
-            liters = value / 1000000000;
+            liters = value / 1e9;
             break;
             case "pl":  // Picolitri
-            liters = value / 1000000000000;
+            liters = value / 1e12;
             break;
             case "t":   // Cucchiaino
             liters = value * 0.00492892;
@@ -298,33 +298,33 @@ document.addEventListener("DOMContentLoaded", () => {
         // Conversione da chilogrammi all'unità di destinazione
         switch (toUnit) {
             case "Pg":
-            return parseFloat((kilograms / 1e15).toFixed(5));
-            case "Tg":
             return parseFloat((kilograms / 1e12).toFixed(5));
-            case "Gg":
+            case "Tg":
             return parseFloat((kilograms / 1e9).toFixed(5));
-            case "t":
+            case "Gg":
             return parseFloat((kilograms / 1e6).toFixed(5));
-            case "g":
+            case "t":
             return parseFloat((kilograms / 1000).toFixed(5));
-            case "hg":
-            return parseFloat((kilograms / 100).toFixed(5));
-            case "dag":
-            return parseFloat((kilograms / 10).toFixed(5));
             case "kg":
             return parseFloat(kilograms.toFixed(5));
-            case "dg":
+            case "hg":
             return parseFloat((kilograms * 10).toFixed(5));
-            case "cg":
+            case "dag":
             return parseFloat((kilograms * 100).toFixed(5));
-            case "mg":
+            case "g":
             return parseFloat((kilograms * 1000).toFixed(5));
-            case "µg":
+            case "dg":
+            return parseFloat((kilograms * 1e4).toFixed(5));
+            case "cg":
+            return parseFloat((kilograms * 1e5).toFixed(5));
+            case "mg":
             return parseFloat((kilograms * 1e6).toFixed(5));
-            case "ng":
+            case "µg":
             return parseFloat((kilograms * 1e9).toFixed(5));
-            case "pg":
+            case "ng":
             return parseFloat((kilograms * 1e12).toFixed(5));
+            case "pg":
+            return parseFloat((kilograms * 1e15).toFixed(5));
             case "oz":
             return parseFloat((kilograms / 0.0283495).toFixed(5));
             case "lb":
@@ -364,33 +364,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return "Unità di destinazione non valida";
         }
     }
-    
-    
-    /* // Gestione dell'evento quando l'utente clicca il bottone
-    convertButton.addEventListener("click", function() {
-        let value = parseFloat(valueInput.value);  // Ottieni il valore da convertire
-        let fromUnit = fromUnitSelect.value;       // Unità di partenza
-        let toUnit = toUnitSelect.value;           // Unità di destinazione
-        
-        if (isNaN(value)) {
-            resultElement.innerText = "Inserisci un valore valido.";
-        } else {
-            
-            // Nasconde il risultato e mostra il caricamento
-            resultElement.style.display = 'none';
-            loadingElement.style.display = 'block';
-            
-            setTimeout(() => {
-                // Calcola il risultato
-                let result = convertLength(value, fromUnit, toUnit);
-                
-                // Nasconde il caricamento e mostra il risultato
-                loadingElement.style.display = 'none';
-                resultElement.style.display = 'block';
-                resultElement.innerText = `Il risultato è: ${result} ${toUnit}`;
-            }, 2000);
-        }
-    }); */
 
 
     convertButton.addEventListener("click", function() {
@@ -423,11 +396,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 result = convertLength(value, fromUnit, toUnit);
                 unitSymbol = toUnit;
 
-            } else if (["l", "ml", "gal"].includes(fromUnit2)) {  // Massa
+            } else if (["Tl", "Gl", "Ml", "kl", "hl", "dal", "l", "dl", "cl", "ml", "µl", "nl", "pl", "tsp", "tbsp", "oz fl", "cup", "pt", "qt", "gal", "bbl"].includes(fromUnit2)) {  // Massa
                 result = convertCapacity(value, fromUnit2, toUnit2);
                 unitSymbol = toUnit2;
 
-            } else if (["kg", "g", "lb", "oz"].includes(fromUnit3)) {  // Capacità
+            } else if (["Pg", "Tg", "Gg", "t", "kg", "hg", "dag", "g", "dg", "cg", "mg", "µg", "ng", "pg", "lb", "oz"].includes(fromUnit3)) {  // Capacità
                 result = convertMass(value, fromUnit3, toUnit3);
                 unitSymbol = toUnit3;
 

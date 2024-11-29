@@ -15,18 +15,19 @@
     <h1 class="text-center mt-4">Metrifier</h1>
 
     <!-- Sezione di selezione delle grandezze fisiche -->
-    
-    <div id="selectionSection" class="container-fluid mt-4 d-flex flex-column align-items-center">
-        <h3 id="initialMessage">Di quale grandezza fisica vuoi scoprire i segreti?</h3>
-        <label for="categorySelect"></label>
-        <select id="categorySelect" class="form-select">
-            <option value="" disabled selected hidden></option>
-            <option value="length">Lunghezza</option>
-            <option value="capacity">Capacità</option>
-            <option value="mass">Massa</option>
-            <option value="temperature">Temperatura</option>
-        </select>
-    </div>   
+    <div class="container-fluid row">
+        <div id="selectionSection" class="col-12 col-md-6 mb-3 container-fluid mt-4 d-flex flex-column align-items-center">
+            <h3 id="initialMessage">Di quale grandezza fisica vuoi scoprire i segreti?</h3>
+            <label for="categorySelect"></label>
+            <select id="categorySelect" class="form-select">
+                <option value="" disabled selected hidden></option>
+                <option value="length">Lunghezza</option>
+                <option value="capacity">Capacità</option>
+                <option value="mass">Massa</option>
+                <option value="temperature">Temperatura</option>
+            </select>
+        </div>  
+    </div> 
 
     <!-- Sezione di conversione unità -->
 
@@ -34,8 +35,8 @@
         <label for="value" class="mb-2" id="phrase">Valore da convertire:</label>
         <input type="number" id="value" placeholder="Inserisci un valore" class="mb-4">
         
-        <div class="d-flex justify-content-around w-100 px-5 mt-4" id="lengthSection">
-            <div class="text-center px-3 hidden" id="fromUnitlength">
+        <div class="row d-flex justify-content-around w-100 px-5 mt-4" id="lengthSection">
+            <div class="col-12 col-md-6 mb-3 text-center px-3 hidden" id="fromUnitlength">
                 <label for="fromUnit">Scegli l'unità di misura di partenza che preferisci!</label>
                 <select class="form-select" id="fromUnit">
                     <option value="" disabled selected hidden></option>
@@ -60,7 +61,7 @@
                 </select>
             </div>
             
-            <div class="text-center px-3 hidden"  id="toUnitlength">
+            <div class="col-12 col-md-6 mb-3 text-center px-3 hidden"  id="toUnitlength">
                 <label for="toUnit">Scegli l'unità di misura di arrivo che preferisci!</label>
                 <select class="form-select" id="toUnit">
                     <option value="" disabled selected hidden></option>
@@ -86,8 +87,8 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-around w-100 px-5" id="capacitySection">
-            <div class="text-center px-3 hidden" id="fromUnitcapacity">
+        <div class="row d-flex justify-content-around w-100 px-5" id="capacitySection">
+            <div class="col-12 col-md-6 mb-3 text-center px-3 hidden" id="fromUnitcapacity">
                 <label for="fromUnit2">Scegli l'unità di misura di partenza che preferisci!</label>
                 <select class="form-select" id="fromUnit2">
                     <option value="" disabled selected hidden></option>
@@ -115,7 +116,7 @@
                 </select>
             </div>
             
-            <div class="text-center px-3 hidden" id="toUnitcapacity">
+            <div class="col-12 col-md-6 mb-3 text-center px-3 hidden" id="toUnitcapacity">
                 <label for="toUnit2">Scegli l'unità di misura di arrivo che preferisci!</label>
                 <select class="form-select" id="toUnit2">
                     <option value="" disabled selected hidden></option>
@@ -144,8 +145,8 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-around w-100 px-5" id="massSection">
-            <div class="text-center px-3 hidden"  id="fromUnitmass">
+        <div class="row d-flex justify-content-around w-100 px-5" id="massSection">
+            <div class="col-12 col-md-6 mb-3 text-center px-3 hidden"  id="fromUnitmass">
                 <label for="fromUnit3">Scegli l'unità di misura di partenza che preferisci!</label>
                 <select class="form-select" id="fromUnit3">
                     <option value="" disabled selected hidden></option>
@@ -168,7 +169,7 @@
                 </select>
             </div>
             
-            <div class="text-center px-3 hidden"  id="toUnitmass">
+            <div class="col-12 col-md-6 mb-3 text-center px-3 hidden"  id="toUnitmass">
                 <label for="toUnit3">Scegli l'unità di misura di arrivo che preferisci!</label>
                 <select class="form-select" id="toUnit3">
                     <option value="" disabled selected hidden></option>
@@ -192,8 +193,8 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-around w-100 px-5" id="temperatureSection">
-            <div class="text-center px-3 hidden"  id="fromUnittemperature">
+        <div class="row d-flex justify-content-around w-100 px-5" id="temperatureSection">
+            <div class="col-12 col-md-6 mb-3 text-center px-3 hidden"  id="fromUnittemperature">
                 <label for="fromUnit4">Scegli l'unità di misura di partenza che preferisci!</label>
                 <select class="form-select" id="fromUnit4">
                     <option value="" disabled selected hidden></option>
@@ -203,7 +204,7 @@
                 </select>
             </div>
             
-            <div class="text-center px-3 hidden"  id="toUnittemperature">
+            <div class="col-12 col-md-6 mb-3 text-center px-3 hidden"  id="toUnittemperature">
                 <label for="toUnit4">Scegli l'unità di misura di arrivo che preferisci!</label>
                 <select class="form-select" id="toUnit4">
                     <option value="" disabled selected hidden></option>
